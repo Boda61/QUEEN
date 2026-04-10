@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="style.css">
+<title>❤️</title>
+
+<style>
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading" class="center">
+    <div class="glass">
+        <div class="loader"></div>
+        <p class="loading-text">ثواني يا روحي معلش 😂❤️</p>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div id="main" class="center">
+    <div class="glass">
+
+        <img src="goldnecklace2.jpg.jpeg" />
+
+        <p>جاهزة ❤️</p>
+
+        <input type="password" id="pass" placeholder="اكتبي الباسورد" />
+        <br>
+
+        <button onclick="check()">يلا بسرعه افتحي ❤️</button>
+
+    </div>
+</div>
+
+<script>
+setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("main").style.display = "flex";
+}, 3000);
+
+function check() {
+    let p = document.getElementById("pass").value;
+
+    if (p === "1234") {
+        window.location.href = "home.html";
+    } else {
+        alert("غلط 😅");
+    }
+}
+</script>
+
+</body>
+</html>
