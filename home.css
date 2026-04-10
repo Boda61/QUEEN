@@ -1,32 +1,33 @@
-      body {
-        margin: 0;
-        font-family: Arial;
-        text-align: center;
-        background: linear-gradient(135deg, #1e1e2f, #2b2b45);
-        color: white;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-      }
+body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
-      /* hearts */
-      .heart {
-        position: fixed;
-        bottom: 0;
-        color: #ff4d6d;
-        animation: float 5s linear infinite;
-      }
+/* hearts */
+.heart {
+    position: fixed;
+    bottom: 0;
+    color: #ff4d6d;
+    animation: float 5s linear infinite;
+}
 
-      @keyframes float {
-        0% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-800px);
-          opacity: 0;
-        }
-      }
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px);
+        opacity: 0;
+    }
+}
 
+/* HERO */
 .hero {
     height: 100vh;
     display: flex;
@@ -37,7 +38,7 @@
     overflow: hidden;
 }
 
-/* الفيديو في الخلفية */
+/* video background */
 .hero-video {
     position: absolute;
     top: 0;
@@ -50,7 +51,7 @@
     z-index: 1;
 }
 
-/* overlay عشان الكلام يبان */
+/* overlay */
 .hero::before {
     content: "";
     position: absolute;
@@ -64,245 +65,74 @@
     z-index: 2;
 }
 
-/* الكلام فوق الفيديو */
+/* content above video */
 .hero > *:not(video) {
     position: relative;
     z-index: 3;
 }
 
-      .love-box {
-        border: 2px solid #ff4d6d;
-        border-radius: 50px;
-        padding: 15px 40px;
-        font-size: 28px;
-        background: rgba(255, 255, 255, 0.05);
-      }
-
-      .name {
-        font-size: 22px;
-        color: #ff4d6d;
-        margin-top: 10px;
-      }
-
-      /* sections */
-      .section {
-        margin: 80px 0;
-      }
-
-      /* ====== COUNTER STYLES ====== */
-
-      .counter-wrapper {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-
-      .counter-box {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 25px;
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      }
-
-      .counter-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-      }
-
-      .time-box {
-        background: rgba(255, 255, 255, 0.12);
-        padding: 15px;
-        border-radius: 15px;
-        min-width: 90px;
-      }
-
-      .time-box span {
-        display: block;
-        font-size: 20px;
-        font-weight: bold;
-        color: #ff4d6d;
-      }
-
-      .time-box small {
-        font-size: 12px;
-        opacity: 0.8;
-      }
-
-      /* cards */
-      .cards {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-      }
-
-      .card {
-        width: 110px;
-        height: 140px;
-        perspective: 1000px;
-        cursor: pointer;
-      }
-
-      .inner {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transition: 0.6s;
-        transform-style: preserve-3d;
-      }
-
-      .card.flipped .inner {
-        transform: rotateY(180deg);
-      }
-
-      .front,
-      .back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backface-visibility: hidden;
-      }
-
-      .front {
-        background: #ff4d6d;
-      }
-      .back {
-        background: #fff;
-        color: #ff4d6d;
-        transform: rotateY(180deg);
-      }
-
-      /* gallery */
-      .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .photo {
-        margin: 10px;
-      }
-
-      .photo img {
-        width: 120px;
-        border-radius: 10px;
-      }
-
-
-
-#popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-
-    justify-content: center;
-    align-items: center;
+/* LOVE BOX */
+.love-box {
+    border: 2px solid #ff4d6d;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.05);
 }
 
-/* glass box */
-.popup-content {
-    width: 85%;
-    max-width: 400px;
+.name {
+    font-size: 22px;
+    color: #ff4d6d;
+    margin-top: 10px;
+}
+
+/* SECTIONS */
+.section {
+    margin: 80px 0;
+}
+
+/* COUNTER */
+.counter-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.counter-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 25px;
     border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255, 77, 109, 0.3);
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
-
-    text-align: center;
-
-    animation: popIn 0.4s ease;
-}
-
-/* title */
-.popup-content h2 {
-    color: #ff4d6d;
-    margin-bottom: 10px;
-}
-
-/* message */
-#msg {
-    font-size: 16px;
-    line-height: 1.8;   
-    color: white;
-    margin-bottom: 20px;
-    white-space: pre-wrap; 
-    word-break: break-word;
-}
-
-/* close button */
-.close {
-    padding: 10px 20px;
-    border: 1px solid rgba(255, 77, 109, 0.4);
-    border-radius: 15px;
-
-    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
 
-    color: #ff4d6d;
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 90px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 20px;
     font-weight: bold;
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 77, 109, 0.4);
-}
-
-/* animation */
-@keyframes popIn {
-    from {
-        transform: scale(0.7);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-      .popup-content {
-        text-align: center;
-      }
-
-      .close {
-        margin-top: 20px;
-        background: white;
-        color: #ff4d6d;
-      }
-      /* love text */
-.love-text h2 {
-    font-size: 26px;
-    margin-bottom: 10px;
     color: #ff4d6d;
 }
 
-.love-text p {
-    font-size: 18px;
-    opacity: 0.9;
+.time-box small {
+    font-size: 12px;
+    opacity: 0.8;
 }
 
-/* cards layout (2 per row) */
+/* CARDS (FLIP) */
 .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -312,7 +142,6 @@
     margin: auto;
 }
 
-/* card */
 .card {
     width: 100%;
     height: 140px;
@@ -320,7 +149,6 @@
     cursor: pointer;
 }
 
-/* inner */
 .inner {
     width: 100%;
     height: 100%;
@@ -329,13 +157,12 @@
     transform-style: preserve-3d;
 }
 
-/* flip */
 .card.flipped .inner {
     transform: rotateY(180deg);
 }
 
-/* front/back common */
-.front, .back {
+.front,
+.back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -347,38 +174,32 @@
     -webkit-backface-visibility: hidden;
 }
 
-/* FRONT */
+/* front */
 .front {
     background: linear-gradient(135deg, #ff4d6d, #ff7a90);
     color: white;
     font-size: 22px;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-/* BACK (glass effect) */
+/* back */
 .back {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 77, 109, 0.4);
     color: #ff4d6d;
     font-weight: bold;
     transform: rotateY(180deg);
-    transition: 0.3s;
 }
 
-/* glow لما يتقلب */
 .card.flipped .back {
     animation: glow 1.5s infinite alternate;
 }
 
-/* مهم: يخفي الوجه الأمامي تمامًا */
 .card.flipped .front {
     opacity: 0;
 }
 
-/* glow animation */
 @keyframes glow {
     0% {
         box-shadow: 0 0 5px rgba(255, 77, 109, 0.3);
@@ -391,7 +212,7 @@
     }
 }
 
-/* gallery container */
+/* GALLERY */
 .glass-gallery {
     display: flex;
     flex-direction: column;
@@ -400,34 +221,27 @@
     margin-top: 60px;
 }
 
-/* each box */
 .memory {
     width: 100%;
     max-width: 450px;
-    padding: 12px;   /* زودنا شوية عشان الشكل */
+    padding: 12px;
     border-radius: 18px;
 
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
     border: 1px solid rgba(255, 77, 109, 0.3);
-    box-shadow: 0 0 15px rgba(0,0,0,0.25);
 
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
     transition: 0.3s;
 }
 
-/* image */
 .memory img {
     width: 100%;
     border-radius: 12px;
-    display: block;
-
-    height: 400px;   /* هنا بالظبط 👇 */
+    height: 400px;
     object-fit: cover;
 }
 
-/* text */
 .memory p {
     margin-top: 10px;
     font-size: 15px;
@@ -435,7 +249,6 @@
     font-weight: bold;
 }
 
-/* hover effect */
 .memory:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 25px rgba(255, 77, 109, 0.4);
@@ -444,6 +257,8 @@
 .memory:hover img {
     transform: scale(1.02);
 }
+
+/* DOWN HAND */
 .down-hand {
     display: inline-block;
     animation: bounceDown 1s infinite;
@@ -454,51 +269,41 @@
     50% { transform: translateY(5px); }
 }
 
+/* BUTTON */
 .glass-btn {
     margin-top: 25px;
     margin-bottom: 90px;
     padding: 14px 30px;
     border: 1px solid rgba(255, 77, 109, 0.4);
     border-radius: 18px;
+
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+
     color: #ff4d6d;
     font-size: 16px;
     font-weight: bold;
+
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/* hover */
 .glass-btn:hover {
     transform: scale(1.06);
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 25px rgba(255, 77, 109, 0.5);
 }
 
-/* 🔥 pulse glow animation */
+/* pulse */
 .pulse-btn {
     animation: pulseGlow 1.8s infinite;
 }
 
 @keyframes pulseGlow {
-    0% {
-        box-shadow: 0 0 10px rgba(255, 77, 109, 0.3);
-        transform: scale(1);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(255, 77, 109, 0.7);
-        transform: scale(1.03);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(255, 77, 109, 0.3);
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
 }
 
-/* section text */
+/* STOP SECTION */
 .stop-section {
     margin-top: 40px;
     text-align: center;
@@ -506,65 +311,39 @@
 
 .stop-section h3 {
     color: #ff4d6d;
-    font-size: 20px;
-    margin-bottom: 20px;
 }
 
-/* container */
+/* LOVE BOXES */
 .love-boxes {
     display: flex;
-    flex-direction: column; /* يخليهم تحت بعض */
+    flex-direction: column;
     align-items: center;
     gap: 12px;
 }
 
-/* glass cards */
 .love-card {
-    width: 280px;        /* عرض ثابت */
-    text-align: center;
-
+    width: 280px;
     padding: 14px 20px;
     border-radius: 50px;
 
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 
     border: 1px solid rgba(255, 77, 109, 0.4);
 
     color: #ff4d6d;
     font-weight: bold;
 
-    box-shadow: 0 0 15px rgba(0,0,0,0.25);
-
     animation: glowPulse 1.8s infinite;
-
-    transition: 0.3s;
 }
 
-/* hover */
-.love-card:hover {
-    transform: scale(1.08);
-}
-
-/* glow animation */
 @keyframes glowPulse {
-    0% {
-        box-shadow: 0 0 8px rgba(255, 77, 109, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(255, 77, 109, 0.8);
-    }
-    100% {
-        box-shadow: 0 0 8px rgba(255, 77, 109, 0.3);
-    }
-}
-@media (max-width: 480px) {
-    .love-card {
-        width: 85%;
-    }
+    0% { box-shadow: 0 0 8px rgba(255, 77, 109, 0.3); }
+    50% { box-shadow: 0 0 25px rgba(255, 77, 109, 0.8); }
+    100% { box-shadow: 0 0 8px rgba(255, 77, 109, 0.3); }
 }
 
+/* MUSIC BAR */
 .music-bar {
     position: fixed;
     bottom: 15px;
@@ -579,56 +358,109 @@
 
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 
     border: 1px solid rgba(255, 77, 109, 0.3);
     border-radius: 50px;
 
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-
     z-index: 9999;
 }
 
-/* صورة بتلف */
 .music-img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     border: 2px solid #ff4d6d;
     object-fit: cover;
-
     animation: spin 3s linear infinite;
 }
 
-/* توقف الدوران */
 .music-img.paused {
     animation-play-state: paused;
 }
 
-/* زرار */
 .music-btn {
     width: 40px;
     height: 40px;
-
-    border: none;
     border-radius: 50%;
-
+    border: none;
     background: #ff4d6d;
     color: white;
-    font-size: 18px;
-
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .music-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255,77,109,0.5);
 }
 
-/* دوران */
 @keyframes spin {
-    100% {
-        transform: rotate(360deg);
+    100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   RESPONSIVE (Counter + Images)
+========================= */
+
+/* tablets */
+@media (max-width: 992px) {
+    .counter-box {
+        max-width: 380px;
+        width: 90%;
+    }
+
+    .memory {
+        max-width: 380px;
+        width: 90%;
+    }
+
+    .memory img {
+        height: 300px;
+    }
+}
+
+/* phones */
+@media (max-width: 600px) {
+
+    .counter-box {
+        max-width: 320px;
+        width: 92%;
+        padding: 18px;
+    }
+
+    .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .memory {
+        max-width: 320px;
+        width: 92%;
+        padding: 10px;
+    }
+
+    .memory img {
+        height: 220px;
+    }
+}
+
+/* very small phones */
+@media (max-width: 400px) {
+
+    .counter-box {
+        max-width: 280px;
+        width: 95%;
+        padding: 15px;
+    }
+
+    .memory {
+        max-width: 280px;
+        width: 95%;
+    }
+
+    .memory img {
+        height: 240px;
+    }
+
+    .time-box span {
+        font-size: 16px;
     }
 }
