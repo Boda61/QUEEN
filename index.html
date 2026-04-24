@@ -1,58 +1,84 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" href="style.css">
-<title>❤️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
+  <link rel="stylesheet" href="style.css" />
 
-</style>
+  <title>❤️</title>
 </head>
 
 <body>
-
-<!-- LOADING -->
-<div id="loading" class="center">
+  <!-- LOADING -->
+  <div id="loading" class="center">
     <div class="glass">
-        <div class="loader"></div>
-        <p class="loading-text">ثواني يا روحي معلش 😂❤️</p>
+      <div class="loader"></div>
+      <p class="loading-text">ثواني يا روحي معلش 😂❤️</p>
     </div>
-</div>
+  </div>
 
-<!-- MAIN -->
-<div id="main" class="center">
+  <!-- MAIN -->
+  <div id="main" class="center">
     <div class="glass">
+      <img src="mostafa 1.jpeg" />
 
-        <img src="soska 4.jpeg" />
+      <p>جاهزة ❤️</p>
 
-        <p>جاهزة ❤️</p>
+      <input type="password" id="pass" placeholder="اكتبي الباسورد" />
+      <br />
 
-        <input type="password" id="pass" placeholder="اكتبي الباسورد" />
-        <br>
-
-        <button onclick="check()">يلا بسرعه افتحي ❤️</button>
-
+      <button onclick="check()">يلا بسرعه افتحي ❤️</button>
     </div>
-</div>
+  </div>
 
-<script>
-setTimeout(() => {
-    document.getElementById("loading").style.display = "none";
-    document.getElementById("main").style.display = "flex";
-}, 3000);
+  <script>
+    setTimeout(() => {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("main").style.display = "flex";
+    }, 3000);
 
-function check() {
-    let p = document.getElementById("pass").value;
+    async function check() {
+      let p = document.getElementById("pass").value;
 
-    if (p === "15/12/2003") {
-        window.location.href = "Home.html";
-    } else {
+      if (p === "30/9/2005") {
+        try {
+          // جلب محتوى الصفحة الثانية
+          let response = await fetch("Home.html");
+          let html = await response.text();
+
+          // تغيير الرابط في المتصفح ليبدو وكأننا انتقلنا للصفحة الثانية
+          window.history.pushState({}, "", "Home.html");
+
+          // كتابة محتوى الصفحة الثانية بداخل الصفحة الحالية للحفاظ على تفاعل المستخدم
+          document.open();
+          document.write(html);
+          document.close();
+
+          // تشغيل الأغنية تلقائياً بعد تحميل محتوى الصفحة الثانية
+          setTimeout(() => {
+            let music = document.getElementById("music");
+            if (music) {
+              music.play().then(() => {
+                // تحديث شكل الزر والصورة ليتناسب مع أن الأغنية تعمل
+                let img = document.getElementById("musicImg");
+                let btn = document.getElementById("musicBtn");
+                if (img) img.classList.remove("paused");
+                if (btn) btn.innerHTML = "⏸";
+              }).catch(e => console.log("Autoplay error:", e));
+            }
+          }, 100);
+
+        } catch (e) {
+          // في حال حدوث خطأ، يتم الانتقال بالطريقة العادية
+          window.location.href = "Home.html";
+        }
+      } else {
         alert("غلط 😅");
+      }
     }
-}
-</script>
-
+  </script>
 </body>
+
 </html>

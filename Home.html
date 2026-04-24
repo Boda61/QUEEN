@@ -8,31 +8,34 @@
   </head>
 
   <body>
-<div class="music-bar">
 
-  <img src="soska 1.jpeg" class="music-img" id="musicImg">
+    <!-- MUSIC BAR -->
+    <div class="music-bar">
+      <img src="mostafa 3.jpeg" class="music-img" id="musicImg">
 
-  <button class="music-btn" onclick="toggleMusic()" id="musicBtn">
-    ▶
-  </button>
+      <button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+        ▶
+      </button>
+    </div>
 
-</div>
+    <audio id="music" loop>
+      <source src="1583051726_sc.mp3" type="audio/mp3">
+    </audio>
 
-<audio id="music" loop>
-  <source src="1583051726_tk.mp3" type="audio/mp3">
-</audio>
-
+    <!-- HERO -->
     <div class="hero">
       <video autoplay muted loop class="hero-video">
         <source src="video.mp4" type="video/mp4" />
       </video>
 
       <div class="love-box">❤️ بحبك ❤️</div>
-      <div class="name">seham</div>
+      <div class="name">ASMAA</div>
     </div>
+
+    <!-- SECTION 1 -->
     <div class="section">
       <h2>أول يوم اتقابلنا فيه ❤️</h2>
-      <p>28 / 3 / 2026</p>
+      <p>22 / 3 / 2026</p>
 
       <!-- COUNTER -->
       <div class="counter-wrapper">
@@ -42,29 +45,18 @@
           </h3>
 
           <div class="counter-grid">
-            <div class="time-box">
-              <span id="years">0</span><small>سنة</small>
-            </div>
-            <div class="time-box">
-              <span id="months">0</span><small>شهر</small>
-            </div>
-            <div class="time-box">
-              <span id="days">0</span><small>يوم</small>
-            </div>
-            <div class="time-box">
-              <span id="hours">0</span><small>ساعة</small>
-            </div>
-            <div class="time-box">
-              <span id="minutes">0</span><small>دقيقة</small>
-            </div>
-            <div class="time-box">
-              <span id="seconds">0</span><small>ثانية</small>
-            </div>
+            <div class="time-box"><span id="years">0</span><small>سنة</small></div>
+            <div class="time-box"><span id="months">0</span><small>شهر</small></div>
+            <div class="time-box"><span id="days">0</span><small>يوم</small></div>
+            <div class="time-box"><span id="hours">0</span><small>ساعة</small></div>
+            <div class="time-box"><span id="minutes">0</span><small>دقيقة</small></div>
+            <div class="time-box"><span id="seconds">0</span><small>ثانية</small></div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- STOP SECTION -->
     <div class="stop-section">
       <h3>اقفي هنا شويه ❤️</h3>
 
@@ -75,11 +67,13 @@
       </div>
     </div>
 
+    <!-- LOVE TEXT -->
     <div class="section love-text">
       <h2>انتي أحلى حاجة في حياتي ❤️</h2>
       <p>دوسي علي الكروت😍</p>
     </div>
 
+    <!-- CARDS -->
     <div class="cards">
       <div class="card" onclick="flip(this)">
         <div class="inner">
@@ -110,71 +104,73 @@
       </div>
     </div>
 
+    <!-- GALLERY -->
     <div class="section glass-gallery">
       <div class="memory">
         <p>حياتي باختصار هنا <span class="down-hand">👇</span></p>
       </div>
 
       <div class="memory">
-        <img src="soska 1.jpeg" />
+        <img src="mostafa 2.jpeg" style="height: 300px;" />
         <p>ضحكتك اللي تخليني أعيش 😍</p>
       </div>
 
       <div class="memory">
-        <img src="soska 2.jpeg" />
+        <img src="mostafa 3.jpeg" style="height: 300px;" />
         <p>كل يوم معاكي أحلى ❤️</p>
       </div>
 
       <div class="memory">
-        <img src="soska 3.jpeg" />
+        <img  src="mostafa 4.jpeg"  style="height: 350PX;" />
         <p>قلبك أجمل حاجة 💖</p>
       </div>
 
       <div class="memory">
-        <img src="soska 4.jpeg" />
+        <img src="mostafa 5.jpeg" style="height: 300PX;" />
         <p>بحبك أكتر من نفسي ❤️</p>
       </div>
 
       <div class="memory">
-        <img src="soska 5.jpeg" />
+        <img src="mostafa 6.jpeg" style="height: 300px;" />
         <p>انتي الحلم الحقيقي ✨</p>
       </div>
 
       <div class="memory">
-        <img src="soska 1.jpeg" />
+        <img src="mostafa 7.jpeg"  />
         <p>وجودك أمان 😍</p>
       </div>
 
       <div class="memory">
-        <img src="soska 4.jpeg" />
+        <img src="mostafa 8.jpeg" style="height: 300px;" />
         <p>هفضل أحبك للأبد ❤️</p>
       </div>
     </div>
 
+    <!-- BUTTON -->
     <button class="glass-btn pulse-btn" onclick="showPopup()">
       لسه مخلصتش دوسي هنا
     </button>
 
+    <!-- POPUP -->
     <div id="popup">
       <div class="popup-content">
-        <h2>سوسكا ❤️</h2>
+        <h2>قطتي ❤️</h2>
         <p id="msg"></p>
         <button class="close" onclick="closePopup()">اقفلي ❤️</button>
       </div>
     </div>
 
+    <!-- SCRIPT -->
     <script>
-      /* music */
       document.body.addEventListener(
         "click",
         () => {
           document.getElementById("music").play();
         },
-        { once: true },
+        { once: true }
       );
 
-      /* counter */
-      let start = new Date("2026-03-28T00:00:00");
+      let start = new Date("2026-03-22T00:00:00");
 
       function updateCounter() {
         let now = new Date();
@@ -202,7 +198,7 @@
           let prevMonthDays = new Date(
             now.getFullYear(),
             now.getMonth(),
-            0,
+            0
           ).getDate();
           days += prevMonthDays;
           months--;
@@ -223,16 +219,14 @@
       setInterval(updateCounter, 1000);
       updateCounter();
 
-      /* flip cards */
       function flip(el) {
         el.classList.toggle("flipped");
       }
 
-      /* popup */
       function showPopup() {
         document.getElementById("popup").style.display = "flex";
 
-        let message = "انتي أجمل حاجة في حياتي ومش هقدر أعيش من غيرك ❤️";
+        let message = "  الحُبُّ قَدَري، وأنتِ قَدَري، سأبقى أُحِبُّكِ حتّى تُفارِقَ الرّوحُ جَسَدي، ما دامَ اللهُ يَسمَعُني... سأَتَمَنّاكِ❤️";
         let i = 0;
 
         document.getElementById("msg").innerText = "";
@@ -248,7 +242,6 @@
         document.getElementById("popup").style.display = "none";
       }
 
-      /* hearts */
       setInterval(() => {
         let heart = document.createElement("div");
         heart.className = "heart";
@@ -261,21 +254,22 @@
         setTimeout(() => heart.remove(), 5000);
       }, 500);
 
-let music = document.getElementById("music");
-let img = document.getElementById("musicImg");
-let btn = document.getElementById("musicBtn");
+      let music = document.getElementById("music");
+      let img = document.getElementById("musicImg");
+      let btn = document.getElementById("musicBtn");
 
-function toggleMusic() {
-    if (music.paused) {
-        music.play();
-        img.classList.remove("paused");
-        btn.innerHTML = "⏸";
-    } else {
-        music.pause();
-        img.classList.add("paused");
-        btn.innerHTML = "▶";
-    }
-}
+      function toggleMusic() {
+        if (music.paused) {
+          music.play();
+          img.classList.remove("paused");
+          btn.innerHTML = "⏸";
+        } else {
+          music.pause();
+          img.classList.add("paused");
+          btn.innerHTML = "▶";
+        }
+      }
     </script>
+
   </body>
 </html>
